@@ -7,7 +7,7 @@ export default function App() {
   const [answers, setAnswers] = useState({
     a1: "",
     a2: "",
-    a3: ""
+    a3: "",
   });
   const [letter, setLetter] = useState("");
 
@@ -35,7 +35,10 @@ Goodbye.
       <div className="container background">
         <h1 className="typewriter">UNSENT</h1>
         <p>A gentle space to say what never got said.</p>
-        <p>Write the letter they’ll never read — and release it for your own peace.</p>
+        <p>
+          Write the letter they’ll never read — and release it for your own
+          peace.
+        </p>
         <button onClick={() => setStep(2)}>Begin Writing</button>
       </div>
     );
@@ -46,11 +49,20 @@ Goodbye.
       <div className="container background">
         <h2>Pick a tone:</h2>
         {[
-          { key: "gentle", text: "I’ve made peace, but I still have things to say." },
+          {
+            key: "gentle",
+            text: "I’ve made peace, but I still have things to say.",
+          },
           { key: "angry", text: "I need to let it out, raw and unfiltered." },
           { key: "unsure", text: "I’m torn. I’m still figuring it out." },
-          { key: "detached", text: "I’ve moved on, but I want to close the loop." },
-          { key: "grieving", text: "This isn’t just about pain — it’s about letting go." }
+          {
+            key: "detached",
+            text: "I’ve moved on, but I want to close the loop.",
+          },
+          {
+            key: "grieving",
+            text: "This isn’t just about pain — it’s about letting go.",
+          },
         ].map((t) => (
           <button
             key={t.key}
@@ -60,7 +72,8 @@ Goodbye.
               setStep(3);
             }}
           >
-            <strong>{t.key.toUpperCase()}</strong><br />
+            <strong>{t.key.toUpperCase()}</strong>
+            <br />
             {t.text}
           </button>
         ))}
@@ -73,12 +86,27 @@ Goodbye.
       <div className="container background">
         <h2>Write Your Truth</h2>
         {[
-          { q: "What would you say if you weren’t afraid?", k: "a1", e: "I never got to tell you how much it broke me." },
-          { q: "What hurt the most?", k: "a2", e: "The silence after everything we shared." },
-          { q: "What do you wish they understood before they left?", k: "a3", e: "I wasn’t perfect, but I always cared." }
+          {
+            q: "What would you say if you weren’t afraid?",
+            k: "a1",
+            e: "I never got to tell you how much it broke me.",
+          },
+          {
+            q: "What hurt the most?",
+            k: "a2",
+            e: "The silence after everything we shared.",
+          },
+          {
+            q: "What do you wish they understood before they left?",
+            k: "a3",
+            e: "I wasn’t perfect, but I always cared.",
+          },
         ].map((p) => (
           <div className="prompt" key={p.k}>
-            <label><strong>{p.q}</strong></label><br />
+            <label>
+              <strong>{p.q}</strong>
+            </label>
+            <br />
             <textarea
               rows={4}
               placeholder={p.e}
@@ -86,7 +114,7 @@ Goodbye.
               onChange={(e) =>
                 setAnswers({
                   ...answers,
-                  [p.k]: e.target.value
+                  [p.k]: e.target.value,
                 })
               }
             ></textarea>
@@ -105,8 +133,16 @@ Goodbye.
         <button onClick={() => window.print()}>Download</button>
         <button onClick={() => window.location.reload()}>Write Another</button>
         <p className="footer-note">
-          Want to go deeper? Subscribe to <strong>Unlearn With Me</strong> — the raw, real newsletter behind this tool.<br />
-          <a href="https://unlearningwithme.substack.com" target="_blank" rel="noreferrer">unlearningwithme.substack.com</a>
+          Want to go deeper? Subscribe to <strong>Unlearn With Me</strong> — the
+          raw, real newsletter behind this tool.
+          <br />
+          <a
+            href="https://unlearningwithme.substack.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            unlearningwithme.substack.com
+          </a>
         </p>
       </div>
     );
