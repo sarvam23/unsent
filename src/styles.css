@@ -44,14 +44,14 @@ textarea {
   width: 90%;
   max-width: 600px;
   margin: 0.5rem 0;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: 1px solid #555;
   padding: 0.5rem;
 }
 
 textarea::placeholder {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 pre {
@@ -76,27 +76,37 @@ pre {
   border-right: 0.1em solid white;
   white-space: nowrap;
   letter-spacing: 0.1em;
-  animation:
-    smooth-type 3s steps(30, end) 1 forwards,
-    blink-caret 0.8s step-end infinite;
+  animation: smooth-type 3s steps(30, end) 1 forwards,
+    blink-caret 0.4s step-end infinite;
 }
 
 @keyframes smooth-type {
-  from { width: 0 }
-  to { width: 6ch; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 8.5ch;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 .background::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(circle, rgba(128,128,128,0.05) 1px, transparent 1px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgb(93, 93, 93) 1px, transparent 1px);
   background-size: 30px 30px;
   z-index: 0;
 }
